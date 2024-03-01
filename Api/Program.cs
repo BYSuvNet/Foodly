@@ -5,7 +5,7 @@ using Foodly.Infrastructure;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-Infrastructure.AddDbContext(builder.Configuration, builder.Services);
+FoodlyInfrastructure.AddDbContext(builder.Configuration, builder.Services);
 builder.Services.AddScoped<IFoodOrderRepository, EFFoodOrderRepository>();
 builder.Services.AddScoped<IDishRepository, EFDishRepository>();
 builder.Services.AddScoped<IFoodOrderService, FoodOrderService>();

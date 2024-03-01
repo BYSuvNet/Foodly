@@ -1,14 +1,18 @@
+using Foodly.Core;
+using Foodly.Infrastructure;
 using Blazor.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+
+FoodlyInfrastructure.AddDbContext(builder.Configuration, builder.Services);
+builder.Services.AddScoped<IFoodOrderRepository, EFFoodOrderRepository>();
+builder.Services.AddScoped<IDishRepository, EFDishRepository>();
+builder.Services.AddScoped<IFoodOrderService, FoodOrderService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);

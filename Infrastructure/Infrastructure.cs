@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Foodly.Infrastructure;
 
-public static class Infrastructure
+public static class FoodlyInfrastructure
 {
     public static void AddDbContext(IConfiguration configuration, IServiceCollection services)
     {
