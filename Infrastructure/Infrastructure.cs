@@ -16,7 +16,7 @@ public static class Infrastructure
 
         if (useOnlyInMemoryDatabase)
         {
-            services.AddDbContext<AppDbContext>(c => c.UseInMemoryDatabase("FoodlyDb"));
+            services.AddDbContext<AppDbContext>(c => c.UseInMemoryDatabase("Foodly"));
         }
         else
         {
