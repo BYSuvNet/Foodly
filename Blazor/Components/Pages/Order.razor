@@ -1,0 +1,59 @@
+﻿@page "/orderfood"
+@inject IDishRepository DishRepository
+@inject IFoodOrderService FoodOrderService
+@rendermode InteractiveServer
+@attribute [StreamRendering]
+
+<PageTitle>Order food</PageTitle>
+
+<h1>Order food</h1>
+
+@if (dishes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Dish</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dish in dishes)
+            {
+                <tr>
+                    <td>@dish.Name</td>
+                    <td>@dish.Name</td>
+                    <td>@dish.Price</td>
+                    <td><button @onclick="(() => OrderFood(dish.Id))"><b>order</b></button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (message != null)
+{
+    <p>@message</p>
+}
+
+@code {
+    private IEnumerable<Dish>? dishes;
+    private string? message;
+
+    protected override async Task OnInitializedAsync()
+    {
+        dishes = await DishRepository.GetAllAsync();
+    }
+
+    private async void OrderFood(int dishId)
+    {
+        string orderNo = await FoodOrderService.OrderFoodAsync(dishId);
+        message = "Thank you for your order! Your order number is: " + orderNo;
+    }
+}
