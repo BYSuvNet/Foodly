@@ -11,7 +11,7 @@ public class FoodOrderService : IFoodOrderService
         this._foodOrderRepo = _foodOrderRepo;
     }
 
-    public async Task<string> OrderFood(int dishId)
+    public async Task<string> OrderFoodAsync(int dishId)
     {
         Dish? dish = await _dishRepo.GetByIdAsync(dishId);
 
