@@ -31,7 +31,7 @@ webApp.MapGet("/orders", async (IFoodOrderService fd) => await fd.GetAllOrdersAs
 webApp.MapGet("/orders/{orderNo}", async (string orderNo, IFoodOrderService fd) => await fd.GetOrderByOrderNoAsync(orderNo));
 webApp.MapPost("/orders", async (FoodOrderRequest fo, IFoodOrderService fd) =>
 {
-    string orderNo = await fd.OrderFood(fo.DishId);
+    string orderNo = await fd.OrderFoodAsync(fo.DishId);
 
     if (string.IsNullOrEmpty(orderNo))
     {
