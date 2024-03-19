@@ -22,3 +22,19 @@
                 NavigationManager.NavigateTo("counter");
             }
         }
+
+dotnet new xunit -n MatchMaker.Api.IntegrationTests
+
+I Api.csproj:
+  <ItemGroup>
+      <InternalsVisibleTo Include="MatchMaker.Api.IntegrationTests" />
+  </ItemGroup>
+
+i testprojektet:
+    > dotnet add reference ../../Api/Api.csproj
+
+    > dotnet add package Microsoft.AspNetCore.Mvc.Testing
+    > dotnet add package FluentAssertions
+
+dotnet user-secrets init
+dotnet user-secrets set "ConnectionStrings:Foodly" "Data Source=../database-test.db"

@@ -55,3 +55,5 @@ webApp.MapPost("/dishes", (Dish dish, AppDbContext db, [FromHeader(Name = "secre
 });
 
 webApp.Run();
+
+public partial class Program { }

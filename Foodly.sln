@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{4F287153-C490-403D-AFD3-E82D0EDA6876}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiIntegrationTests", "ApiIntegrationTests\ApiIntegrationTests.csproj", "{F083FA42-317E-47EA-ADDE-780A1089C1FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{4F287153-C490-403D-AFD3-E82D0EDA6876}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F287153-C490-403D-AFD3-E82D0EDA6876}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F287153-C490-403D-AFD3-E82D0EDA6876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F083FA42-317E-47EA-ADDE-780A1089C1FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F083FA42-317E-47EA-ADDE-780A1089C1FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F083FA42-317E-47EA-ADDE-780A1089C1FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F083FA42-317E-47EA-ADDE-780A1089C1FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
