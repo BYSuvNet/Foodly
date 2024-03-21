@@ -17,7 +17,7 @@ public class FoodOrderService : IFoodOrderService
 
         if (dish == null)
         {
-            return string.Empty;
+            return "";
         }
 
         FoodOrder newOrder = new() { Dish = dish, OrderDate = DateTime.Now, Price = dish.Price };
