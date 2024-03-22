@@ -22,7 +22,7 @@ internal class FoodlyWebApplicationFactory : WebApplicationFactory<Program>
 
             // Delete the database (if exists) to ensure we start clean
             AppDbContext dbContext = CreateDbContext(services);
-            // dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
         });
     }
@@ -33,6 +33,9 @@ internal class FoodlyWebApplicationFactory : WebApplicationFactory<Program>
             .AddUserSecrets<FoodlyWebApplicationFactory>()
             .Build();
 
+        //Kom ihåg att köra dessa kommandon för att sätta upp user-secrets!
+        //dotnet user-secrets init
+        //dotnet user-secrets set "ConnectionStrings:Foodly" "Data Source=../database-test.db"
         var connString = configuration.GetConnectionString("Foodly");
         return connString;
     }
